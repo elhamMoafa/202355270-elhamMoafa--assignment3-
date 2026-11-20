@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f5" />
+
+    <meta
+      name="description"
+      content="Elham Moafa's personal portfolio website."
+    />
+
+    <title>Elham Moafa | Interactive Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a class="logo" href="#home">EM<span>.</span></a>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#github">GitHub</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            title="Toggle color theme"
+          >
+            ☾
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home" tabindex="-1">
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow" id="greeting">
+            Hello, welcome to my portfolio.
+          </p>
+
+          <h1>
+            Building simple ideas into
+            <span>useful digital experiences.</span>
+          </h1>
+
+          <p class="hero-text">
+            I am Elham Moafa, a student and aspiring web developer interested
+            in front-end development, user experience, and creative
+            problem-solving.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">View My Work</a>
+            <a class="btn secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal" aria-label="Profile introduction">
+          <img
+            src="assets/images/elham-profile.png"
+            width="320"
+            height="320"
+            alt="Portrait of Elham Moafa"
+            class="profile-image"
+          />
+
+          <p>Elham Moafa</p>
+          <span>Student Developer</span>
+          <small>HTML · CSS · JavaScript</small>
+        </div>
+      </section>
+
+      <section class="section container" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">01 — About Me</p>
+          <h2>A curious learner with a practical mindset.</h2>
+        </div>
+
+        <div class="about-grid">
+          <p>
+            I enjoy learning how websites work and turning ideas into clean,
+            responsive interfaces. My goal is to keep improving my technical
+            skills while creating digital products that are clear and easy to
+            use.
+          </p>
+
+          <p>
+            This portfolio is my first foundation project. It demonstrates
+            semantic HTML, responsive CSS, JavaScript interactivity, and
+            responsible use of AI-assisted development.
+          </p>
+        </div>
+      </section>
+
+      <section class="section muted" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">02 — Selected Projects</p>
+            <h2>Work I am proud to practice with.</h2>
+          </div>
+
+          <div class="project-tools">
+            <div class="filter-controls" role="group" aria-label="Filter projects by category">
+              <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All Projects <span>2</span></button>
+              <button class="filter-button" type="button" data-filter="design" aria-pressed="false">Web Design</button>
+              <button class="filter-button" type="button" data-filter="frontend" aria-pressed="false">Front-End</button>
+            </div>
+            <label class="search-control"><span aria-hidden="true">⌕</span><input id="projectSearch" type="search" placeholder="Search projects" aria-label="Search projects"></label>
+            <label class="sort-control">Sort: <select id="projectSort" aria-label="Sort projects"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
+          </div>
+          <p class="results-message" id="resultsMessage" aria-live="polite"></p>
+          <div class="project-grid" id="projectGrid">
+            <article class="project-card reveal" data-category="design" data-date="2025-10-01" data-search="study planner web design student organize subjects deadlines weekly goals productivity">
+              <div class="project-image image-one">01</div>
+
+              <div class="project-content">
+                <p class="project-type">Web Design</p>
+
+                <h3>Study Planner</h3>
+
+                <p>
+                  A clean planning interface that helps students organize
+                  subjects, deadlines, and weekly goals.
+                </p>
+
+                <a href="#contact">Discuss project →</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-category="frontend" data-date="2025-05-15" data-search="local café landing page front-end practice menu location responsive call to action">
+              <div class="project-image image-two">02</div>
+
+              <div class="project-content">
+                <p class="project-type">Front-End Practice</p>
+
+                <h3>Local Café Landing Page</h3>
+
+                <p>
+                  A responsive landing page concept with a menu section,
+                  location details, and a clear call to action.
+                </p>
+
+                <a href="#contact">Discuss project →</a>
+              </div>
+            </article>
+          </div>
+          <div class="empty-state" id="emptyState" hidden>
+            <h3>No projects found</h3>
+            <p>Try another search term or select a different category.</p>
+            <button class="reset-button" id="resetProjects" type="button">Show all projects</button>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section container" id="github">
+        <div class="section-heading">
+          <p class="eyebrow">03 — Live from GitHub</p>
+          <h2>Recent public repositories.</h2>
+          <p class="section-intro">Enter a GitHub username to load public repositories directly from GitHub. Only public repository details are requested.</p>
+        </div>
+        <form class="github-form" id="githubForm" novalidate>
+          <label for="githubUsername">GitHub username</label>
+          <input id="githubUsername" name="githubUsername" type="text" autocomplete="off" placeholder="Enter a username" required maxlength="39">
+          <button class="btn primary" type="submit">Load repositories</button>
+        </form>
+        <p id="githubStatus" class="api-status" role="status" aria-live="polite">Enter a username and choose “Load repositories”.</p>
+        <div id="githubRepos" class="repo-grid"></div>
+      </section>
+
+      <section class="section muted">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">A small personal touch</p>
+            <h2 id="visitorGreeting" aria-live="polite">Welcome to my portfolio.</h2>
+            <p class="section-intro">Save a name on this device, switch the demo visitor status, and see how long this page has been open. These settings stay in this browser only.</p>
+          </div>
+          <div class="visitor-panel">
+            <form id="visitorForm" class="visitor-form">
+              <label for="visitorName">Your name</label>
+              <input id="visitorName" name="visitorName" type="text" maxlength="40" placeholder="Type your name">
+              <button class="btn primary" type="submit">Save name</button>
+            </form>
+            <div class="visitor-actions">
+              <button id="visitorStatusToggle" class="btn secondary" type="button">Simulate sign in</button>
+              <p id="visitorStatus" role="status" aria-live="polite">Visitor mode</p>
+              <p>Time on this page: <strong id="visitTimer">0:00</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="skills">
+        <div class="section-heading">
+          <p class="eyebrow">04 — Skills</p>
+          <h2>Tools I am currently developing.</h2>
+        </div>
+
+        <div class="skills-list">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Responsive Design</span>
+          <span>Git & GitHub</span>
+          <span>Problem Solving</span>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">05 — Contact</p>
+
+            <h2>Have an idea? Let’s connect.</h2>
+
+            <p>
+              Use this demo to check your message. Your details stay in this browser.
+            </p>
+          </div>
+
+          <form id="contactForm" novalidate>
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              autocomplete="name"
+              type="text"
+              placeholder="Your name"
+              required
+            />
+
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              autocomplete="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message..."
+              required
+            ></textarea>
+
+            <button class="btn primary" type="submit">
+              Validate Message
+            </button>
+
+            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <p>© <span id="currentYear">2026</span> Elham Moafa. Interactive Portfolio.</p>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </footer>
+
+  </body>
+</html>
